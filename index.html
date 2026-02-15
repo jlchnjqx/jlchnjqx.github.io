@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>集流成海·宁聚前行 | 北航实践队</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            background-color: #f0f7ff;
+            color: #333;
+        }
+
+        /* 导航栏 */
+        nav {
+            background-color: #003366;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #66ccff;
+        }
+
+        /* 英雄区 */
+        .hero {
+            background: linear-gradient(135deg, #005599 0%, #003366 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .team-logo {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* 主要内容区 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            color: #005599;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #66ccff;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        /* 队伍介绍 */
+        .team-intro {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .team-intro p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* 成员展示 */
+        .members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .member-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            background-color: #cce6ff;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #005599;
+            font-size: 2rem;
+            overflow: hidden; /* 确保图片不超出圆形区域 */
+        }
+
+        .member-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 使图片完全覆盖容器，保持比例 */
+        }
+
+        .member-name {
+            font-weight: bold;
+            color: #005599;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-major {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* 实践项目 */
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .project-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #66ccff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-title {
+            color: #005599;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="#intro">团队简介</a></li>
+            <li><a href="#members">成员风采</a></li>
+            <li><a href="#projects">实践项目</a></li>
+            <li><a href="#contact">联系方式</a></li>
+        </ul>
+    </nav>
+
+    <!-- 英雄区 -->
+    <div class="hero">
+        <img src="resources/logo.png" alt="集流成海·宁聚前行队徽" class="team-logo">
+        <h1>集流成海·宁聚前行</h1>
+        <p>北京航空航天大学实践队</p>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <!-- 队伍介绍 -->
+        <section id="intro">
+            <h2>团队简介</h2>
+            <div class="team-intro">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;集流成海·宁聚前行实践队由六名从内蒙古乌兰察布市集宁一中考入北京航空航天大学的学生组成，本实践队将聚焦于乡村振兴与民族团结，深入少数民族聚居地，记录各民族间交往交流交融的生动故事，弘扬并践行“中华民族共同体意识”。</p>
+            </div>
+        </section>
+
+        <!-- 成员风采 -->
+        <section id="members">
+            <h2>成员风采</h2>
+            <div class="members">
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img src="resources/张浩.jpg" alt="成员头像">
+                    </div>
+                    <div class="member-name">张浩（队长）</div>
+                    <div class="member-major">士谔书院</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img src="resources/牛星智.jpg" alt="成员头像">
+                    </div>
+                    <div class="member-name">牛星智</div>
+                    <div class="member-major">航空科学与工程学院</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img src="resources/李子扬.jpg" alt="成员头像">
+                    </div>
+                    <div class="member-name">李子扬</div>
+                    <div class="member-major">中法航空学院</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img src="resources/索婧.jpg" alt="成员头像">
+                    </div>
+                    <div class="member-name">索婧</div>
+                    <div class="member-major">士谔书院</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img src="resources/陈治.jpg" alt="成员头像">
+                    </div>
+                    <div class="member-name">陈治</div>
+                    <div class="member-major">守锷书院</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img src="resources/李昊岳.jpg" alt="成员头像">
+                    </div>
+                    <div class="member-name">李昊岳</div>
+                    <div class="member-major">集成电路科学与工程学院</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 实践项目 -->
+        <section id="projects">
+            <h2>实践项目</h2>
+            <div class="projects">
+                <div class="project-item">
+                    <div class="project-title">参观乌兰察布民俗博物馆</div>
+                    <p>暂无</p>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">征集并宣传民族团结故事</div>
+                    <p>暂无</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer id="contact">
+        <p>集流成海·宁聚前行 | 北京航空航天大学实践队</p>
+        <p>公众号：集流成海 宁聚前行</p>
+        <p>邮箱：jlchnjqx@163.com</p>
+    </footer>
+</body>
+</html>
