@@ -237,6 +237,7 @@ h2 {
   color: #005599;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  font-size: 1.3rem;
 }
 
 /* 项目内容容器：使用Flexbox实现横向布局 */
@@ -295,6 +296,44 @@ h2 {
   font-size: 0.8rem;
 }
 
+/* 视频回放区域样式 */
+.videos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+}
+
+.video-item {
+  width: 100%;
+  max-width: 800px; /* 限制视频最大宽度，避免拉伸过宽 */
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* video 标签样式 */
+video {
+  width: 100%; /* 自适应容器宽度 */
+  height: auto; /* 保持宽高比 */
+  border-radius: 8px; /* 与项目图片统一圆角风格 */
+  outline: none; /* 移除默认聚焦边框 */
+  background-color: #f0f7ff; /* 加载时背景色，与页面主色调呼应 */
+}
+
+/* 视频控件美化（可选，增强视觉一致性） */
+/* video::-webkit-media-controls-panel {
+  background-color: rgba(0, 51, 102, 0.9);
+} */
+
+/* video::-webkit-media-controls-play-button {
+  color: white;
+  background-color: #66ccff;
+  border-radius: 50%;
+} */
+
 /* 页脚 */
 footer {
   background-color: #003366;
@@ -347,5 +386,10 @@ footer {
   .image-carousel {
     width: 100%;
     max-width: none;
+  }
+
+  .video-item {
+    padding: 1rem;
+    max-width: 100%;
   }
 }
