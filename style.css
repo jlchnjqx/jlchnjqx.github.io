@@ -472,7 +472,7 @@ footer {
 
 /* 加载完成时的提示 */
 .progress-text.completed {
-  color: #27ae60; /* 绿色表示完成 */
+  color: #005599;
   font-weight: bold;
   transform: scale(1.05);
 }
