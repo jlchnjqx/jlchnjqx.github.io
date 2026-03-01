@@ -393,3 +393,98 @@ footer {
     max-width: 100%;
   }
 }
+
+/* ==================== 加载进度条样式 ==================== */
+
+/* 进度条容器 */
+.loading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #f0f7ff; /* 与页面背景色一致 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* 确保在最顶层 */
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-progress.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* 进度条背景 */
+.progress-bar {
+  width: 80%;
+  max-width: 400px;
+  height: 8px;
+  background-color: rgba(0, 51, 102, 0.1); /* 主色调的浅色版本 */
+  border-radius: 4px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 进度条填充部分 */
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #66ccff 0%, #005599 100%); /* 渐变色 */
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 进度条光晕效果 */
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.4), 
+    transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* 进度文字 */
+.progress-text {
+  color: #005599;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+/* 加载完成时的提示 */
+.progress-text.completed {
+  color: #27ae60; /* 绿色表示完成 */
+  font-weight: bold;
+  transform: scale(1.05);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .progress-bar {
+    width: 90%;
+    height: 6px;
+  }
+  
+  .progress-text {
+    font-size: 1rem;
+  }
+}
